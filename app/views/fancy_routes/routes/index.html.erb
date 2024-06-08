@@ -1,6 +1,19 @@
-<pre style="font-family: monospace;">
-  <% @sented_more organized_elormize_format = @routes.each_with_object([]) do |route, array| %>
-    <% array << { "#{route.verb} #{route.path.spec}".ljust(30) => route.name } %>
-  <% end %>
-  <%= organized_format.inspect %>
-</pre>
+<h1>Application Routes</h1>
+<table style="width:100%; border: 1px solid black; border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th style="border: 1px solid black; padding: 8px; background-color: #f2f2f2;">Prefix</th>
+      <th style="border: 1px solid black; padding: 8px; background-color: #f2f2f2;">Verb</th>
+      <th style="border: 1px solid black; padding: 8px; background-color: #f2f2f2;">Controller#Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @routes.each do |route| %>
+      <tr>
+        <td style="border: 1px solid black; padding: 8px; text-align: left; font-family: monospace;"><%= route.name %></td>
+        <td style="border: 1px solid black; padding: 8px; text-align: left; font-family: monospace;"><%= route.verb %></td>
+        <td style="border: 1px solid black; padding: 8px; text-align: left; font-family: monospace;"><%= route.endpoint %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

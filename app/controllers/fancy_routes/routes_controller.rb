@@ -1,10 +1,14 @@
 module FancyRoutes
   class RoutesController < ActionController::Base
-    layout false
-
     def index
-      @routes = Rails.application.routes.routes.collect do |route|
-        { verb: route.verb, path: route.path.spec.to_s, name: route.name }
+      @routes = Rails.application.routes.routes.map do |route|
+        route_wrapper = ActionDispatch::Routing::RouteWrapper.new(route)
+        OpenStruct.new({
+          name: route_wrapper.name.presence || '',
+          verb: route_wrapper.verb,
+          path: route_wrapper.path,
+          endpoint: route_wrapper.endpoint
+        })
       end
     end
   end
