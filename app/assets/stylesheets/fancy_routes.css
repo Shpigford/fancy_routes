@@ -1,3 +1,30 @@
+/* Terminal-like black design with white text for Fancy Routes */
 body {
-  background-color: #f0f0f0;
+  background-color: #000000; /* Black background for terminal-like appearance */
+  color: #ffffff; /* White text for high contrast */
+  font-family: "Source Code Pro", monospace; /* Maintain monospace font for terminal feel */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #333333; /* Dark grey border for subtle contrast */
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #1a1a1a; /* Slightly lighter black for headers */
+}
+
+tr:nth-child(even) {
+  background-color: #141414; /* Even darker shade for alternate rows */
+}
+
+tr:hover {
+  background-color: #1c1c1c; /* Slightly lighter shade on hover for visibility */
 }
