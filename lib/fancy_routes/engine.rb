@@ -4,7 +4,7 @@ module FancyRoutes
 
    initializer "fancy_routes.add_routes" do
       Rails.application.routes.append do
-        mount FancyRoutes::Engine => "/fancy_routes" if Rails.env.development?
+        mount FancyRoutes::Engine => "/fancy_routes"
       end
     end
  end
