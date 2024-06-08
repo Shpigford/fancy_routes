@@ -1,3 +1,3 @@
 FancyRoutes::Engine.routes.draw do
-  get '/fancy_routes' => 'routes#index'
+  resource :fancy_routes, only: [:index], as: :fancy_routes
 end
