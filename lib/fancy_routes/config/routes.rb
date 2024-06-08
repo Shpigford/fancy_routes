@@ -1,3 +1,3 @@
 FancyRoutes::Engine.routes.draw do
- root to: 'routes#index'
+  get '/fancy_routes' => 'routes#index'
 end

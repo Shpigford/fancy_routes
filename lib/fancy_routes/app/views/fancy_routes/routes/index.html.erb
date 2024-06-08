@@ -1,3 +1,6 @@
-<% @routes.each do |route| %>
-  <p><%= route.path.spec.to_s %></p>
-<% end %>
+<pre style="font-family: monospace;">
+  <% @sented_more organized_elormize_format = @routes.each_with_object([]) do |route, array| %>
+    <% array << { "#{route.verb} #{route.path.spec}".ljust(30) => route.name } %>
+  <% end %>
+  <%= organized_format.inspect %>
+</pre>
